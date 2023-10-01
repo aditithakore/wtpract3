@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login and Registration</title>
     <style>
-        * {
+         * {
             margin: 0;
             padding: 0;
             font-family: sans-serif;
@@ -132,25 +132,25 @@
                 <button type="button" class="toggle-btn" onclick="login()">Login</button>
                 <button type="button" class="toggle-btn" onclick="register()">Register</button>
             </div>
-            <form id="login" class="input-group" action="login.php" method="POST">
+            <form id="login" class="input-group" action="login_registration.php" method="POST">
                 <input type="text" class="input-field" id="username" name="username" placeholder="User Id" required>
                 <input type="password" class="input-field" id="password" name="password" placeholder="Enter Password" required>
                 <input type="checkbox" class="check-box">
                 <span>Remember Password</span>
-                <button type="submit" class="submit-btn">Log in</button>
+                <button type="submit" class="submit-btn" name="login">Log in</button>
                 <p class="terms">By signing up, signing in, or continuing, I agree to Apartment Therapy Media's <a class="terms1" href="https://www.apartmenttherapy.com/about/terms">Terms of Use</a> and <a class="terms1" href="https://www.apartmenttherapy.com/about/privacy-policy">Privacy Policy</a>.</p>
             </form>
-            <form id="register" class="input-group" action="register.php" method="POST">
+            <form id="register" class="input-group" action="login_registration.php" method="POST">
                 <input type="text" class="input-field" id="register-username" name="register-username" placeholder="User Id" required>
                 <input type="password" class="input-field" id="register-password" name="register-password" placeholder="Enter Password" required>
                 <input type="checkbox" class="check-box">
                 <span>I agree to the <a class="terms1" href="https://www.apartmenttherapy.com/about/terms">Terms of Use</a></span>
-                <button type="submit" class="submit-btn">Register</button>
+                <button type="submit" class="submit-btn" name="register" >Register</button>
             </form>
         </div>
     </div>
     <script>
-        var x = document.getElementById("login");
+         var x = document.getElementById("login");
         var y = document.getElementById("register");
         var z = document.getElementById("btn");
 
@@ -174,4 +174,3 @@
     </script>
 </body>
 </html>
-    
