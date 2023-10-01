@@ -4,17 +4,13 @@ require('db_connection.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['login'])) {
-        // Handle login
         $username = $_POST['username'];
         $password = $_POST['password'];
-
         $query = "SELECT id, username, password FROM users WHERE username = ?";
-
         $stmt = $conn->prepare($query);
         $stmt->bind_param("s", $username);
         $stmt->execute();
         $result = $stmt->get_result();
-
         if ($result->num_rows === 1) {
             $row = $result->fetch_assoc();
             if (password_verify($password, $row['password'])) {
@@ -27,14 +23,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } else {
             echo "Invalid username or password.";
         }
-
         $stmt->close();
     } elseif (isset($_POST['register'])) {
         // Handle registration
         $username = $_POST['register-username'];
         $password = $_POST['register-password'];
-
-        // Hash the password using password_hash before storing it in the database.
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
         $query = "INSERT INTO users (username, password) VALUES (?, ?)";
@@ -42,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt = $conn->prepare($query);
 
         if ($stmt) {
-            $stmt->bind_param("ss", $username, $hashedPassword); // Bind the hashed password.
+            $stmt->bind_param("ss", $username, $hashedPassword); 
             if ($stmt->execute()) {
                 header('Location: index.html');
                 exit();
