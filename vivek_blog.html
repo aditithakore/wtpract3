@@ -10,6 +10,8 @@
         <link rel="stylesheet" href="styles.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" 
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
     </head>
     <body>
@@ -134,5 +136,16 @@ The fact that someone is living with anxiety itself proves how hard they are try
               </footer>
             </div>
            -->
+
+        
+<script>
+  // Initialize Bootstrap components when the document is ready
+  $(document).ready(function () {
+      // Enable Bootstrap Navbar Toggle
+      $('.navbar-toggler').click(function () {
+          $('.navbar-collapse').toggleClass('show');
+      });
+  });
+</script>
         </body>
 </html>
