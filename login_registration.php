@@ -13,29 +13,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $result = $stmt->get_result();
         if ($result->num_rows === 1) {
             $row = $result->fetch_assoc();
-            if (password_verify($password, $row['password'])) {
+            if ($password === $row['password']) { 
                 $_SESSION['user_id'] = $row['id'];
                 header('Location: homepage.php');
                 exit();
             } else {
-                echo "Invalid username or password.";
+                header('Location: errorpage.php');
+                exit();
             }
         } else {
-            echo "Invalid username or password.";
+            header('Location: errorpage.php');
+            exit();
         }
         $stmt->close();
     } elseif (isset($_POST['register'])) {
-        // Handle registration
         $username = $_POST['register-username'];
         $password = $_POST['register-password'];
-        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
         $query = "INSERT INTO users (username, password) VALUES (?, ?)";
-
         $stmt = $conn->prepare($query);
 
         if ($stmt) {
-            $stmt->bind_param("ss", $username, $hashedPassword); 
+            $stmt->bind_param("ss", $username, $password);
             if ($stmt->execute()) {
                 header('Location: index.html');
                 exit();

@@ -35,9 +35,7 @@
                     session_start();
                     require('db_connection.php');
 
-                    // Check if the user is logged in
                     if (isset($_SESSION['user_id'])) {
-                        // Fetch the user's information and display their username
                         $user_id = $_SESSION['user_id'];
                         $query = "SELECT username FROM users WHERE id = ?";
                         $stmt = $conn->prepare($query);
@@ -115,9 +113,7 @@
            
            
 <script>
-  // Initialize Bootstrap components when the document is ready
   $(document).ready(function () {
-      // Enable Bootstrap Navbar Toggle
       $('.navbar-toggler').click(function () {
           $('.navbar-collapse').toggleClass('show');
       });

@@ -5,7 +5,100 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login and Registration</title>
     <style>
-         * {
+        body, html, p {
+            height: 100%;
+            margin: 0;
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #ffeecc;
+            font-size: 20px;
+        }
+
+        .nav {
+            background-color: #ffeecc;
+            padding-top: 10px;
+        }
+
+        .container1 {
+            background-color: #ffeecc;
+            text-align: center;
+            padding: 40px 60px;
+        }
+
+        .parallax1, .parallax2, .parallax3, .parallax3 {
+            position: relative;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        .parallax1 {
+            background-image: url("xan-griffin-eA2t5EvcxU4-unsplash_adobespark.jpg");
+            min-height: 110%;
+            margin-top: 20px;
+            padding-bottom: 30px;
+        }
+
+        .parallax2 {
+            background-image: url("joshua-earle-ICE__bo2Vws-unsplash.jpg");
+            min-height: 90%;
+            padding-top: 50px;
+        }
+
+        .parallax3 {
+            background-image: url("ian-stauffer-bH7kZ0yazB0-unsplash_adobespark113.jpg");
+            min-height: 80%;
+            padding-bottom: 200px;
+        }
+
+        .hero-img {
+            width: 1000px;
+            padding: 5px;
+            padding-bottom: 30px;
+        }
+
+        .h1 {
+            color: gray;
+        }
+
+        .responsive {
+            padding-bottom: 10px;
+        }
+
+        .res {
+            padding-top: 20px;
+        }
+
+        .bg-primar {
+            background-color: #ffeecc;
+        }
+
+        .col {
+            float: left;
+            width: 70%;
+        }
+
+        .logo {
+            background-image: url("logo4.png");
+            background-size: cover;
+            height: 80px;
+            width: 160px;
+        }
+  
+
+
+        .foot-panel4 {
+            height: 120px;
+            background-color: bisque;
+            color: black;
+            font-size: 0.7rem;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        * {
             margin: 0;
             padding: 0;
             font-family: sans-serif;
@@ -14,7 +107,7 @@
         .hero {
             height: 100%;
             width: 100%;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 1)), url(Images/scenery1.jpg);
+            background: linear-gradient(to bottom, #ffffff, #f2bc4e);
             background-position: center;
             background-size: cover;
             position: absolute;
@@ -53,7 +146,7 @@
             position: absolute;
             width: 110px;
             height: 100%;
-            background: linear-gradient(to right, #ff105f, #ffad06);
+            background: linear-gradient(to bottom, #ffeecc, #f2bc4e);
             border-radius: 30px;
             transition: 0.4s;
         }
@@ -82,7 +175,7 @@
             cursor: pointer;
             display: block;
             margin: auto;
-            background: linear-gradient(to right, #ff105f, #ffad06);
+            background: linear-gradient(to bottom, #ffeecc, #f2bc4e);
             border: 0;
             outline: none;
             border-radius: 30px;
@@ -135,16 +228,13 @@
             <form id="login" class="input-group" action="login_registration.php" method="POST">
                 <input type="text" class="input-field" id="username" name="username" placeholder="User Id" required>
                 <input type="password" class="input-field" id="password" name="password" placeholder="Enter Password" required>
-                <input type="checkbox" class="check-box">
-                <span>Remember Password</span>
+                <br><br>
                 <button type="submit" class="submit-btn" name="login">Log in</button>
-                <p class="terms">By signing up, signing in, or continuing, I agree to Apartment Therapy Media's <a class="terms1" href="https://www.apartmenttherapy.com/about/terms">Terms of Use</a> and <a class="terms1" href="https://www.apartmenttherapy.com/about/privacy-policy">Privacy Policy</a>.</p>
             </form>
             <form id="register" class="input-group" action="login_registration.php" method="POST">
                 <input type="text" class="input-field" id="register-username" name="register-username" placeholder="User Id" required>
                 <input type="password" class="input-field" id="register-password" name="register-password" placeholder="Enter Password" required>
-                <input type="checkbox" class="check-box">
-                <span>I agree to the <a class="terms1" href="https://www.apartmenttherapy.com/about/terms">Terms of Use</a></span>
+                <br><br>
                 <button type="submit" class="submit-btn" name="register" >Register</button>
             </form>
         </div>
@@ -159,7 +249,7 @@
             y.style.left = "50px";
             z.style.left = "110px";
             var formBox = document.querySelector(".form-box");
-            formBox.style.height = "400px";
+            formBox.style.height = "340px";
             formBox.style.transition = "height 0.4s";
         }
 
